@@ -7,8 +7,6 @@ import {drawerWidth} from './Drawer';
 
 import { mobileOpenToggle } from '../store/mobileOpen';
 
-const handleDrawerToggle = () => mobileOpenToggle();
-
 export default function MyAppBar() {
   // const mobileOpen = useStore($mobileOpen);
   return (
@@ -24,7 +22,7 @@ export default function MyAppBar() {
           color="inherit"
           aria-label="open drawer"
           edge="start"
-          onClick={handleDrawerToggle}
+          onClick={mobileOpenToggle}
           sx={{ mr: 2, display: { sm: 'none' } }}
         >
           <MenuIcon />
@@ -34,5 +32,5 @@ export default function MyAppBar() {
         </Typography>
       </Toolbar>
     </AppBar>
-  )
+  );
 }
