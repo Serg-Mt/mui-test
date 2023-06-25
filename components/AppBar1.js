@@ -3,9 +3,14 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
-import {drawerWidth,handleDrawerToggle} from './Drawer';
+import {drawerWidth} from './Drawer';
+
+import { mobileOpenToggle } from '../store/mobileOpen';
+
+const handleDrawerToggle = () => mobileOpenToggle();
 
 export default function MyAppBar() {
+  // const mobileOpen = useStore($mobileOpen);
   return (
     <AppBar
       position="fixed"

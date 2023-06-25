@@ -16,19 +16,17 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
-import { useState } from 'react';
+
+import { useStore } from '@nanostores/react';
+import { $mobileOpen, mobileOpenToggle } from '../store/mobileOpen';
 
 export const drawerWidth = 240;
 
-export const handleDrawerToggle = () => {
-  setMobileOpen(!mobileOpen);
-};
+const handleDrawerToggle = () => mobileOpenToggle();
 
 export default function ResponsiveDrawer(props) {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-
+  const mobileOpen =useStore($mobileOpen);
 
   const drawer = (
     <div>
